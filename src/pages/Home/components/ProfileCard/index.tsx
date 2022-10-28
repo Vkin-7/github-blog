@@ -1,9 +1,17 @@
 import { 
 	ProfileCardContainer, 
 	ProfileContent, 
+	ProfileFooter, 
 	ProfileHeader, 
 	ProfileImage 
 } from './styles';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { 
+	faBuilding,
+	faUserGroup
+} from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 export function ProfileCard() {
 	return (
@@ -23,11 +31,20 @@ export function ProfileCard() {
                     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
 				</p>
 
-				<footer>
-					<span>nick</span>
-					<span>work</span>
-					<span>followers</span>
-				</footer>
+				<ProfileFooter>
+					<span>
+						<FontAwesomeIcon icon={faGithub} />
+                        nick
+					</span>
+					<span>
+						<FontAwesomeIcon icon={faBuilding} />
+                        work
+					</span>
+					<span>
+						<FontAwesomeIcon icon={faUserGroup} />
+                        followers
+					</span>
+				</ProfileFooter>
 			</ProfileContent>
 		</ProfileCardContainer>
 	);

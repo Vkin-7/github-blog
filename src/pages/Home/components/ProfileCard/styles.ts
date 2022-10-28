@@ -34,15 +34,6 @@ export const ProfileContent = styled.div`
     p {
         margin: 8px 0 24px 0;
     }
-
-    footer {
-        position: relative;
-        bottom: 0;
-
-        display: flex;
-        gap: 1.5rem;
-        
-    }
 `;
 
 export const ProfileHeader = styled.header`
@@ -71,6 +62,25 @@ export const ProfileHeader = styled.header`
 
         &:hover {
             border-bottom: 1px solid ${props => props.theme.blue};
+        }
+    }
+`;
+
+export const ProfileFooter = styled.footer`
+    position: relative;
+    bottom: 0;
+
+    display: flex;
+    gap: 1.5rem;
+
+    span {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        color: ${props => props.theme['base-subtitle']};
+
+        svg {
+            color: ${props => props.theme['base-label']};
         }
     }
 `;
