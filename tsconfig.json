@@ -25,6 +25,7 @@
       "@layouts/*": ["./src/layouts/*"],
       "@contexts/*": ["./src/contexts/*"],
       "@reducers/*": ["./src/reducers/*"],
+      "@lib/*": ["./src/lib/*"],
     }
   },
   "include": ["src"],
