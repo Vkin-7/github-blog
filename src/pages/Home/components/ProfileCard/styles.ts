@@ -56,6 +56,9 @@ export const ProfileHeader = styled.header`
         line-height: 160%;
 
         display: flex;
+        justify-content: space-between;
+        gap: .5rem;
+        align-items: center;
         position: absolute;
         top: 0;
         right: 0;
@@ -80,6 +83,7 @@ export const ProfileFooter = styled.footer`
         color: ${props => props.theme['base-subtitle']};
 
         svg {
+            font-size: 1.125rem;
             color: ${props => props.theme['base-label']};
         }
     }
