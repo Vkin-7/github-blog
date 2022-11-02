@@ -29,6 +29,8 @@ export interface GithubProviderProps {
 export interface GithubContextType {
     user: GithubUser;
 	posts: Post[];
+	selectedPost: Post | undefined;
+	selectedPostNumber: number | null;
 	loadPosts: (q?: string) => void;
-	selectPost: (id: number) => Post | undefined;
+	selectPost: (id: number) => void;
 }

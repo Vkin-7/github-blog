@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
 	faChevronLeft, 
@@ -17,30 +17,19 @@ import {
 import { Routes } from '@router/types';
 import { useContextSelector } from 'use-context-selector';
 import { GithubContext } from '@contexts/index';
-import { useEffect, useState } from 'react';
-import { Post } from '@contexts/types';
 
-export function PostInfoCard() {
-	const [post, setPost] = useState<Post>();
-    
-	const { posts } = useContextSelector(GithubContext, context => {
+
+export function PostInfoCard() {  
+	const { selectedPost } = useContextSelector(GithubContext, context => {
 		return {
-			posts: context.posts
+			selectedPost: context.selectedPost
 		};
 	});
-
-	const { id } = useParams();
-
-	useEffect(() => {
-		if (posts.length > 0 && posts) {
-			setPost(posts.find(post => `${post.number}` == id));
-		}
-	}, [posts]);
 
 	return (
 		<PostInfoCardContainer>
 			{
-				post
+				selectedPost
 					? (
 						<>
 							<PostInfoCardHeader>
@@ -49,30 +38,30 @@ export function PostInfoCard() {
 									<span>VOLTAR</span>
 								</Link>
 
-								<a href={post.html_url} target='_blank' rel="noreferrer">
+								<a href={selectedPost.html_url} target='_blank' rel="noreferrer">
 									<FontAwesomeIcon icon={faArrowUpRightFromSquare} />
 									<span>VER NO GITHUB</span>
 								</a>
 							</PostInfoCardHeader>
 
 							<PostInfoCardTitle>
-								{post.title}
+								{selectedPost.title}
 							</PostInfoCardTitle>
 
 							<PostInfoCardFooter>
 								<span>
 									<FontAwesomeIcon icon={faGithub} />
-									{post.user.login}
+									{selectedPost.user.login}
 								</span>
 				
 								<span>
 									<FontAwesomeIcon icon={faCalendarDay} />
-						Há um dia
+									Há um dia
 								</span>
 
 								<span>
 									<FontAwesomeIcon icon={faComment} />
-									{post.comments} Comentários
+									{selectedPost.comments} Comentários
 								</span>
 							</PostInfoCardFooter>
 						</>

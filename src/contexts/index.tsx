@@ -14,6 +14,9 @@ export const GithubContext = createContext({} as GithubContextType);
 export function GithubProvider({ children }: GithubProviderProps) {
 	const [user, setUser] = useState<GithubUser>({} as GithubUser);
 	const [posts, setPosts] = useState<Post[]>([] as Post[]);
+	const [selectedPostNumber, setSelectedPostNumber] = useState<number | null>(null);
+
+	const selectedPost = posts.find(post => post.number === selectedPostNumber);
 
 	const loadUser = useCallback(async () => {
 		try {
@@ -51,7 +54,7 @@ export function GithubProvider({ children }: GithubProviderProps) {
 	}, [user]);
 
 	const selectPost = useCallback((number: number) => {
-		return posts.find(post => post.number === number);
+		setSelectedPostNumber(number);
 	}, []);
     
 	return (
@@ -59,6 +62,8 @@ export function GithubProvider({ children }: GithubProviderProps) {
 			value={{
 				user,
 				posts,
+				selectedPost,
+				selectedPostNumber,
 				loadPosts,
 				selectPost,
 			}}
