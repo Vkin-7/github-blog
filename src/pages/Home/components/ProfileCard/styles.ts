@@ -38,7 +38,7 @@ export const ProfileContent = styled.div`
 
 export const ProfileHeader = styled.header`
     display: flex;
-    position: relative;
+    justify-content: space-between;
 
     h1 {
         font-weight: bold;
@@ -59,9 +59,7 @@ export const ProfileHeader = styled.header`
         justify-content: space-between;
         gap: .5rem;
         align-items: center;
-        position: absolute;
-        top: 0;
-        right: 0;
+        border-bottom: 1px solid transparent;
 
         &:hover {
             border-bottom: 1px solid ${props => props.theme.blue};
