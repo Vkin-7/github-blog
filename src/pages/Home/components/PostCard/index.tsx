@@ -3,10 +3,11 @@ import {
 	PostCardContent, 
 	PostCardHeader 
 } from './styles';
+import { LinkProps } from 'react-router-dom';
 
-export function PostCard() {
+export function PostCard(props: LinkProps) {
 	return (
-		<PostCardContainer>
+		<PostCardContainer {...props}>
 			<PostCardHeader>
 				<h3>Título</h3>
 				<span>Há 1 dia</span>

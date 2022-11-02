@@ -5,7 +5,7 @@ export function PostList () {
 	return (
 		<PostListContainer>
 			{[0, 1, 2, 3].map(post => (
-				<PostCard key={post} />
+				<PostCard key={post} to={`test/${post}`} />
 			))}
 		</PostListContainer>
 	);

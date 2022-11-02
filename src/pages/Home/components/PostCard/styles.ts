@@ -1,10 +1,12 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-export const PostCardContainer = styled.div`
+export const PostCardContainer = styled(Link)`
     background-color: ${props => props.theme['base-post']};
     border-radius: 10px;
     padding: 2rem;
     border: 2px solid ${props => props.theme['base-post']};
+    text-decoration: none;
     cursor: pointer;
 
     display: flex;
