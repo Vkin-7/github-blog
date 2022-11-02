@@ -3,21 +3,18 @@ import {
 	PostCardContent, 
 	PostCardHeader 
 } from './styles';
-import { LinkProps } from 'react-router-dom';
+import { PostCardProps } from './types';
 
-export function PostCard(props: LinkProps) {
+export function PostCard({ post, ...rest }: PostCardProps) {
 	return (
-		<PostCardContainer {...props}>
+		<PostCardContainer {...rest}>
 			<PostCardHeader>
-				<h3>Título</h3>
+				<h3>{post.title}</h3>
 				<span>Há 1 dia</span>
 			</PostCardHeader>
 
 			<PostCardContent>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque molestias sapiente porro officiis consectetur voluptas, sequi deleniti, 
-                eius ullam esse fugit sint odit molestiae iure quis iusto incidunt voluptatem? Alias!
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus fugiat nemo adipisci ipsum quibusdam voluptatem quas ipsa harum. 
-                Voluptatum ab placeat repudiandae commodi dolore omnis velit, quam veritatis illo non!
+				{post.body}
 			</PostCardContent>
 		</PostCardContainer>
 	);

@@ -1,5 +1,4 @@
-import React from 'react';
-
+import { LinkProps } from 'react-router-dom';
 
 export interface GithubUser {
 	name: string;
@@ -22,13 +21,6 @@ export interface Post {
 	created_at: Date;
 }
 
-export interface GithubProviderProps {
-    children: React.ReactNode;
-}
-
-export interface GithubContextType {
-    user: GithubUser;
-	posts: Post[];
-	loadPosts: (q?: string) => void;
-	selectPost: (id: number) => Post | undefined;
+export interface PostCardProps extends LinkProps {
+    post: Post;
 }

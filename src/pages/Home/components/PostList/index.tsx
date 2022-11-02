@@ -1,12 +1,13 @@
 import { Routes } from '@router/types';
 import { PostCard } from '../PostCard';
 import { PostListContainer } from './styles';
+import { PostListProps } from './types';
 
-export function PostList () {
+export function PostList ({ posts }: PostListProps) {
 	return (
 		<PostListContainer>
-			{[0, 1, 2, 3].map(post => (
-				<PostCard key={post} to={`${Routes.POST}/${post}`} />
+			{posts.map(post => (
+				<PostCard key={post.id} post={post} to={`${Routes.POST}/${post}`} />
 			))}
 		</PostListContainer>
 	);
