@@ -7,7 +7,11 @@ export function PostList ({ posts }: PostListProps) {
 	return (
 		<PostListContainer>
 			{posts.map(post => (
-				<PostCard key={post.id} post={post} to={`${Routes.POST}/${post}`} />
+				<PostCard 
+					key={post.id} 
+					post={post} 
+					to={`${Routes.POST}/${post.number}`} 
+				/>
 			))}
 		</PostListContainer>
 	);
