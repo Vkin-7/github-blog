@@ -24,7 +24,6 @@
       "@pages/*": ["./src/pages/*"],
       "@layouts/*": ["./src/layouts/*"],
       "@contexts/*": ["./src/contexts/*"],
-      "@reducers/*": ["./src/reducers/*"],
       "@lib/*": ["./src/lib/*"],
       "@router/*": ["./src/router/*"],
       "@hooks/*": ["./src/hooks/*"],

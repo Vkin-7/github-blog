@@ -17,6 +17,8 @@ import {
 import { Routes } from '@router/types';
 import { useContextSelector } from 'use-context-selector';
 import { GithubContext } from '@contexts/index';
+import { formatDistanceToNow } from 'date-fns';
+import { ptBR } from 'date-fns/locale';
 
 
 export function PostInfoCard() {  
@@ -24,6 +26,11 @@ export function PostInfoCard() {
 		return {
 			selectedPost: context.selectedPost
 		};
+	});
+
+	const createdAtRelativeToNow = selectedPost && formatDistanceToNow(new Date(selectedPost.created_at),  {
+		locale: ptBR,
+		addSuffix: true,
 	});
 
 	return (
@@ -56,7 +63,7 @@ export function PostInfoCard() {
 				
 								<span>
 									<FontAwesomeIcon icon={faCalendarDay} />
-									Há um dia
+									{createdAtRelativeToNow}
 								</span>
 
 								<span>
