@@ -15,6 +15,10 @@ export const PostInfoCardContainer = styled.div`
     border-radius: 10px;
 
     margin-top: -5rem;
+
+    @media (max-width: 768px) {
+        margin-top: -2.5rem;
+    }
 `;
 
 export const PostInfoCardHeader = styled.header`
@@ -37,6 +41,10 @@ export const PostInfoCardHeader = styled.header`
         &:hover {
             border-bottom: 1px solid ${props => props.theme.blue};
         }
+
+        @media (max-width: 425px) {
+            font-size: .6rem;
+        }
     }
 `;
 
@@ -44,6 +52,10 @@ export const PostInfoCardTitle = styled.h1`
     color: ${props => props.theme['base-title']};
     font-weight: bold;
     font-size: 1.5rem;
+
+    @media (max-width: 425px) {
+       font-size: 1.2rem;
+    }
 `;
 
 export const PostInfoCardFooter = styled.footer`

@@ -10,4 +10,10 @@ export const PostListContainer = styled.div`
     gap: 2rem;
 
     padding-bottom: 1rem;
+
+    
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+    }
 `;

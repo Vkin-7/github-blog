@@ -21,6 +21,10 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Nunito', sans-serif;
         font-weight: 400;
         font-size: 1rem;
+
+        @media (max-width: 425px) {
+            font-size: .8rem;
+        }
     }
 
     /* width */

@@ -17,6 +17,10 @@ export const PostCardContainer = styled(Link)`
     &:hover {
         border: 2px solid ${props => props.theme['base-label']};
     }
+
+    @media (max-width: 768px) {
+        padding: 1rem;
+        }
 `;
 
 export const PostCardHeader = styled.div`
@@ -25,13 +29,22 @@ export const PostCardHeader = styled.div`
     justify-content: space-between;
 
     h3 {
+        max-width: 80%;
         font-size: 1.25rem;
         color: ${props => props.theme['base-title']};
+
+        @media (max-width: 768px) {
+            font-size: 1rem;
+        }
     }
 
     span {
         color: ${props => props.theme['base-span']};
         font-size: .875rem;
+
+        @media (max-width: 768px) {
+            font-size: .7rem;
+        }
     }
 `;
 

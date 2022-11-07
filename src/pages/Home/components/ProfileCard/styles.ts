@@ -14,6 +14,16 @@ export const ProfileCardContainer = styled.div`
     border-radius: 10px;
 
     margin-top: -5rem;
+
+    @media (max-width: 768px) {
+        margin-top: -2.5rem;
+    }
+
+    @media (max-width: 425px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
 `;
 
 export const ProfileImage = styled.img`
@@ -21,6 +31,11 @@ export const ProfileImage = styled.img`
     height: 9.25rem;
 
     border-radius: 8px;
+
+    @media (max-width: 425px) {
+        width: 5rem;
+        height: 5rem;
+    }
 `;
 
 export const ProfileContent = styled.div`
@@ -32,7 +47,7 @@ export const ProfileContent = styled.div`
     justify-content: space-between;
 
     p {
-        margin: 8px 0 24px 0;
+        margin: .5rem 0 1.5rem 0;
     }
 `;
 
@@ -44,6 +59,10 @@ export const ProfileHeader = styled.header`
         font-weight: bold;
         font-size: 1.5rem;
         line-height: 130%;
+
+        @media (max-width: 425px) {
+            font-size: 1.2rem;
+        }
 
         color: ${props => props.theme['base-title']};
     }
@@ -64,6 +83,10 @@ export const ProfileHeader = styled.header`
         &:hover {
             border-bottom: 1px solid ${props => props.theme.blue};
         }
+
+        @media (max-width: 425px) {
+            font-size: .6rem;
+        }
     }
 `;
 
@@ -83,6 +106,19 @@ export const ProfileFooter = styled.footer`
         svg {
             font-size: 1.125rem;
             color: ${props => props.theme['base-label']};
+
+            @media (max-width: 425px) {
+                font-size: 1rem;
+            }
         }
+
+        @media (max-width: 425px) {
+            gap: .4rem;
+            font-size: .6rem;
+        }
+    }
+
+    @media (max-width: 425px) {
+        gap: .5rem;
     }
 `;
