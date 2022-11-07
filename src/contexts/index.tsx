@@ -12,7 +12,7 @@ import {
 export const GithubContext = createContext({} as GithubContextType);
 
 export function GithubProvider({ children }: GithubProviderProps) {
-	const [user, setUser] = useState<GithubUser>({} as GithubUser);
+	const [user, setUser] = useState<GithubUser>();
 	const [posts, setPosts] = useState<Post[]>([] as Post[]);
 	const [selectedPostNumber, setSelectedPostNumber] = useState<number | null>(null);
 
@@ -23,8 +23,6 @@ export function GithubProvider({ children }: GithubProviderProps) {
 			const response = await api_github.get('users/Vkin-7');
 
 			setUser(response.data);
-
-			await loadPosts('', response.data.login);
 		} catch (error) {
 			console.error(error);
 		}
@@ -35,12 +33,16 @@ export function GithubProvider({ children }: GithubProviderProps) {
 		loadUser();
 	}, []);
 
-	const loadPosts = useCallback(async (q = '', login = user.login) => {
+	useEffect(() => {
+		loadPosts();
+	}, [user]);
+
+	const loadPosts = useCallback(async (q = ' ') => {
 		try {
 			if (user) {
 				const response = await api_github.get('search/issues', {
 					params: {
-						q: `${q}repo:${login}/github-blog`,
+						q: `${q}repo:${user.login}/github-blog`,
 					}
 				});
 	
@@ -51,6 +53,7 @@ export function GithubProvider({ children }: GithubProviderProps) {
 		} catch (error) {
 			console.error(error);
 		}
+
 	}, [user]);
 
 	const selectPost = useCallback((number: number) => {

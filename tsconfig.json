@@ -27,6 +27,7 @@
       "@reducers/*": ["./src/reducers/*"],
       "@lib/*": ["./src/lib/*"],
       "@router/*": ["./src/router/*"],
+      "@hooks/*": ["./src/hooks/*"],
     }
   },
   "include": ["src"],

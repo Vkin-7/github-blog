@@ -23,28 +23,28 @@ export function ProfileCard() {
 			user: context.user
 		};
 	});
-
+	
 	return (
 		<ProfileCardContainer>
 			<ProfileImage 
-				src={user.avatar_url} 
+				src={user?.avatar_url} 
 				loading='lazy'
 			/>
 			<ProfileContent>
 				<ProfileHeader>
 					<h1>{user?.name}</h1>
-					<a href={user.html_url} target='_blank' rel="noreferrer">
+					<a href={user?.html_url} target='_blank' rel="noreferrer">
 						<span>GITHUB</span> 
 						<FontAwesomeIcon icon={faArrowUpRightFromSquare} />
 					</a>
 				</ProfileHeader>
-
+		
 				<p>{user?.bio || 'Sem bio :('}</p>
-
+		
 				<ProfileFooter>
 					<span>
 						<FontAwesomeIcon icon={faGithub} />
-						{user.login}
+						{user?.login}
 					</span>
 					{user?.company && (
 						<span>
@@ -54,10 +54,11 @@ export function ProfileCard() {
 					)}
 					<span>
 						<FontAwesomeIcon icon={faUserGroup} />
-						{`${user.followers} seguidores`}
+						{`${user?.followers} seguidores`}
 					</span>
 				</ProfileFooter>
 			</ProfileContent>
 		</ProfileCardContainer>
 	);
+	
 }

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import ReactMarkdown from 'react-markdown';
 
 export const PostCardContainer = styled(Link)`
     background-color: ${props => props.theme['base-post']};
@@ -34,7 +35,7 @@ export const PostCardHeader = styled.div`
     }
 `;
 
-export const PostCardContent = styled.p`
+export const PostCardContent = styled(ReactMarkdown)`
     color: ${props => props.theme['base-text']};
 
     overflow: hidden;

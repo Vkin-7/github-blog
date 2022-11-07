@@ -14,11 +14,11 @@ export function Post() {
 		};
 	});
 
-	const { id } = useParams();
+	const { number } = useParams();
 
 	useEffect(() => {
-		if (id) {
-			selectPost(+id);
+		if (number) {
+			selectPost(+number);
 		}
 	}, []);
 	
